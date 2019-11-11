@@ -14,6 +14,7 @@ public class Main {
         swap(A, getIndexMin(A), getIndexMax(A));
         System.out.println("Masyvas po didziausio ir maziausio sukeitimo elementu:");
         printArray(A);
+        getLowestMin(A);
     }
 
     /**
@@ -123,5 +124,20 @@ public class Main {
         int temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
+    }
+    /**
+     * Funkcija kuri suranda maziausia skaiciu tarp lyginiu neigamu masyvo elementu
+     *
+     */
+    public static void getLowestMin(int[] array) {
+        int neig = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
+                if (array[i] < neig) {
+                    neig = array[i];
+                }
+            }
+        }
+        System.out.println("Maziausias lyginis neigamas skaicius:" + neig);
     }
 }
